@@ -1,0 +1,121 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Sunset Webpage</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Main Content */
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .content img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Button Styles */
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #34495e;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to My Sunset Gallery</h1>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>About the Sunset</h2>
+        <p>This beautiful sunset was captured at the beach during summer. The vibrant colors and serene atmosphere make it a perfect moment to cherish.</p>
+        
+        <h2>Sunset Image</h2>
+        <img src="https://images.pexels.com/photos/635279/pexels-photo-635279.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Sunset at the beach">
+
+        <h2>Learn More</h2>
+        <p>Learn more about sunsets at <a href="https://en.wikipedia.org/wiki/Sunset" target="_blank">Wikipedia</a>.</p>
+
+        <!-- Button that triggers an alert -->
+        <button onclick="showAlert()">Click Me for a Message</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        &copy; 2025 My Sunset Webpage
+    </footer>
+
+    <script>
+        function showAlert() {
+            alert("Enjoy the beautiful sunset!");
+        }
+    </script>
+
+</body>
+</html>
