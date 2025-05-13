@@ -1,91 +1,112 @@
-/* Global Styles */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  css
+  
+  /* Apply box-sizing border-box globally */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+  /* Basic reset */
+  body, h2, form, label, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
 
-.container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-}
+  /* Body styling */
+  body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+  }
 
-h1 {
-  text-align: center;
-  color: #333;
-}
+  /* Container styling */
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+  }
 
-input[type="text"] {
-  width: calc(100% - 100px);
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
+  /* Heading styling */
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #5c6bc0;
+  }
 
-button {
-  padding: 10px;
-  background-color: #5c6bc0;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+  /* Form styling */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
 
-button:hover {
-  background-color: #3f51b5;
-}
+  /* Label styling */
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #5c6bc0;
+  }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
+  /* Input and textarea styling */
+  input[type="text"], input[type="email"], textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
+  /* Focus state for inputs */
+  input:focus, textarea:focus {
+    border-color: #5c6bc0;
+    outline: none;
+  }
 
-li.completed {
-  text-decoration: line-through;
-  background-color: #e0e0e0;
-}
+  /* Button styling */
+  button {
+    padding: 10px;
+    background-color: #5c6bc0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
 
-button.delete-btn {
-  background-color: red;
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
+  /* Button hover state */
+  button:hover {
+    background-color: #3f51b5;
+  }
 
-button.delete-btn:hover {
-  background-color: darkred;
-}
+  /* Error message styling */
+  .error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 10px;
+    display: none;
+  }
+
+  /* Responsive design for smaller screens */
+  @media (max-width: 600px) {
+    .container {
+      padding: 15px;
+    }
+
+    input[type="text"], input[type="email"], textarea {
+      font-size: 0.9rem;
+    }
+
+    button {
+      font-size: 0.9rem;
+    }
+  }
+

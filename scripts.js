@@ -1,56 +1,37 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const taskInput = document.getElementById('task-input');
-  const addTaskBtn = document.getElementById('add-task-btn');
-  const taskList = document.getElementById('task-list');
+function validateForm() {
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  const errorMessage = document.getElementById('error-message');
 
-  let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  // Clear previous error message
+  errorMessage.style.display = 'none';
 
-  function renderTasks() {
-    taskList.innerHTML = '';
-    tasks.forEach((task, index) => {
-      const li = document.createElement('li');
-      li.classList.toggle('completed', task.completed);
-
-      li.innerHTML = `
-        <span>${task.text}</span>
-        <button class="delete-btn">Delete</button>
-        <button class="edit-btn">Edit</button>
-      `;
-
-      li.querySelector('.delete-btn').addEventListener('click', () => {
-        tasks.splice(index, 1);
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-        renderTasks();
-      });
-
-      li.querySelector('.edit-btn').addEventListener('click', () => {
-        const newText = prompt('Edit task:', task.text);
-        if (newText !== null && newText.trim() !== '') {
-          tasks[index].text = newText.trim();
-          localStorage.setItem('tasks', JSON.stringify(tasks));
-          renderTasks();
-        }
-      });
-
-      li.addEventListener('click', () => {
-        task.completed = !task.completed;
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-        renderTasks();
-      });
-
-      taskList.appendChild(li);
-    });
+  // Validate name
+  if (!name.trim()) {
+    errorMessage.textContent = 'Please enter your name.';
+    errorMessage.style.display = 'block';
+    return false;
   }
 
-  addTaskBtn.addEventListener('click', () => {
-    const taskText = taskInput.value.trim();
-    if (taskText) {
-      tasks.push({ text: taskText, completed: false });
-      localStorage.setItem('tasks', JSON.stringify(tasks));
-      taskInput.value = '';
-      renderTasks();
-    }
-  });
+  // Validate email
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!email.trim()) {
+    errorMessage.textContent = 'Please enter your email.';
+    errorMessage.style.display = 'block';
+    return false;
+  } else if (!emailPattern.test(email)) {
+    errorMessage.textContent = 'Please enter a valid email address.';
+    errorMessage.style.display = 'block';
+    return false;
+  }
 
-  renderTasks();
-});
+  // Validate message
+  if (!message.trim()) {
+    errorMessage.textContent = 'Please enter your message.';
+    errorMessage.style.display = 'block';
+    return false;
+  }
+
+  return true;
+}
