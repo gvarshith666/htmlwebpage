@@ -3,16 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic To-Do List</title>
+  <title>Responsive Layout</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>My To-Do List</h1>
-    <input type="text" id="task-input" placeholder="Add a new task">
-    <button id="add-task-btn">Add Task</button>
-    <ul id="task-list"></ul>
-  </div>
-  <script src="scripts.js"></script>
+  <header class="header">
+    <h1>My Website</h1>
+  </header>
+
+  <nav class="nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="main">
+    <section class="content">
+      <h2>Welcome to Our Website</h2>
+      <p>This is the main content area.</p>
+    </section>
+    <aside class="sidebar">
+      <h3>Sidebar</h3>
+      <p>Additional information or links.</p>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 My Website</p>
+  </footer>
 </body>
 </html>
